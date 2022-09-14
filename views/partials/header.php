@@ -18,12 +18,29 @@
                 <li>
                     <a href="/<?php echo $URL /* $URL comes from config.php */ ?>/">Home</a>
                 </li>
-                <li>
-                    <a href="/<?php echo $URL ?>/views/login/login.php">login</a>
-                </li>
-                <li>
-                    <a href="/<?php echo $URL ?>/views/login/signup.php">signup</a>
-                </li>
+                
+                <?php 
+                    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "false"){
+                ?>
+                    <li>
+                        <a href="/<?php echo $URL ?>/views/login/login.php">login</a>
+                    </li>
+                    <li>
+                        <a href="/<?php echo $URL ?>/views/login/signup.php">signup</a>
+                    </li>
+                <?php
+                    }
+                ?>
+
+                <?php 
+                    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
+                ?>
+                    <li>
+                        <a href="/<?php echo $URL ?>/models/logout.php">Logout</a>
+                    </li>
+                <?php
+                    }
+                ?>
             </ul>
         </nav>
     </header>
