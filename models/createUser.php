@@ -1,5 +1,5 @@
 <?php
-    require '../dbconn.php'; /* is this needed? */
+    require '../dbconn.php';
 
     $name = $_POST['name'];
     $password = $_POST['password'];
@@ -8,4 +8,4 @@
 
     $pdo->query($sql);
     
-    header("Location: http://localhost/$URL/views/login/signup.php?meep=moop");
+    header("Location: /$URL/views/login/signup.php?meep=moop");
