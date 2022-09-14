@@ -8,6 +8,13 @@
     require '../partials/header.php';
 ?>
 
+<?php 
+    //if logged in redirect to /
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] = "true"){
+        header("Location:/$URL/index.php");
+    }
+?>
+
 <form method="post" action="/<?php echo $URL ?>/models/login.php">
     <fieldset>
         <legend>Login</legend>

@@ -9,3 +9,5 @@ $user = 'root';
 $password = '';
 
 $URL = "web_first_sem_prototype";
+
+session_start();

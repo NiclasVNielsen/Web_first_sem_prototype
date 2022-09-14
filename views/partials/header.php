@@ -8,6 +8,11 @@
 </head>
 <body>
     <header>
+        <?php
+            if(isset($_SESSION["name"]) && $_SESSION["name"] != ""){
+                echo $_SESSION["name"];
+            }
+        ?>
         <nav>
             <ul>
                 <li>

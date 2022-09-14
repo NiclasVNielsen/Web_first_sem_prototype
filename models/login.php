@@ -10,9 +10,12 @@
     
     if($data['name']){
         //login
-        print_r($data['name']);
+        $_SESSION["name"] = $data['name'];
+        $_SESSION["loggedin"] = "true";
+
+        echo $_SESSION["name"];
+        header("Location:/$URL/index.php");
     }else{
         header("Location: /$URL/views/login/login.php?err=wronginfo");
     }
 
-    //header("Location:/$URL/index.php?err=wronginfo");
