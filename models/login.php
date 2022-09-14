@@ -4,17 +4,16 @@
     $name = $_POST['name'];
     $password = $_POST['password'];
 
-    $sql = "SELECT name, password FROM users WHERE name=$name AND password=$password";
+    $sql = "SELECT name, password FROM users WHERE name='$name' AND password='$password'";
 
-    $data = $pdo->query($sql)->fetch();
+    $data = $pdo->query($sql)->fetchAll();
     
-    if($data['name']){
+    if($data[0]['name']){
         //login
-        $_SESSION["name"] = $data['name'];
+        $_SESSION["name"] = $data[0]['name'];
         $_SESSION["loggedin"] = "true";
 
-        header("Location:/$URL/");
+        header("Location:/$URL/index.php");
     }else{
         header("Location: /$URL/views/login/login.php?err=wronginfo");
     }
-

@@ -6,24 +6,23 @@
     $name = $_POST['name'];
     $password = $_POST['password'];
 
-    $nameCheckSql = "SELECT name FROM users WHERE name=$name";
+    $nameCheckSql = "SELECT name FROM users WHERE name='$name'";
 
-    $data = $pdo->query($nameCheckSql)->fetch();
-    //🔥 when changing to a reserved name stuff burns
+    $data = $pdo->query($nameCheckSql)->fetchAll();
 
     $validName = true;
-    if($data[0]){
+    if($data[0]['name']){
         $validName = false;
     }
-    if($data[0] == $currentName){
+    if($data[0]['name'] == $currentName){
         $validName = true;
     }
 
     if($name != "" && $validName){
         if($password != ""){
-            $sql = "UPDATE users SET name = $name, password = $password WHERE name = $currentName";
+            $sql = "UPDATE users SET name = '$name', password = '$password' WHERE name = '$currentName'";
         }else{
-            $sql = "UPDATE users SET name = $name WHERE name = $currentName";
+            $sql = "UPDATE users SET name = '$name' WHERE name = '$currentName'";
         }
     
         $pdo->query($sql);
