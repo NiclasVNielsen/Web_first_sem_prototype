@@ -31,5 +31,15 @@
 </form>
 
 <?php
+    if(isset($_GET["err"]) && $_GET["err"] == "invalidname"){
+?>
+    <p>
+        Name is already taken or invalid
+    </p>
+<?php 
+    }
+?>
+
+<?php
     require '../partials/footer.php';
 ?>

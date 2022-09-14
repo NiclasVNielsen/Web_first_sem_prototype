@@ -6,9 +6,6 @@
     $name = $_POST['name'];
     $password = $_POST['password'];
 
-    //if name == current_name dont change it
-    //if password == "" dont change it
-
     $nameCheckSql = "SELECT name FROM users WHERE name=$name";
 
     $data = $pdo->query($nameCheckSql)->fetch();
