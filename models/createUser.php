@@ -7,3 +7,5 @@
     $sql = "INSERT INTO users (name, password) VALUES ('$name', '$password')";
 
     $pdo->query($sql);
+    
+    header("Location: http://localhost/$URL/views/login/signup.php?meep=moop");
