@@ -1,15 +1,15 @@
 <?php
-    /* things act like they are in the root folder here */
-    require 'dbconn.php';
+    require '../../dbconn.php';
 
     $sql = 'SELECT * FROM users'
 ?>
 
 <?php
-    require './views/partials/header.php';
+    require '../partials/header.php';
 ?>
 
 <div>
+    Login
     <?php 
 
     foreach($pdo->query($sql) as $row) {
@@ -24,5 +24,5 @@
 </div>
 
 <?php
-    require './views/partials/footer.php';
+    require '../partials/footer.php';
 ?>

@@ -7,3 +7,5 @@ $host = 'localhost';
 $db = 'web_first_sem_prototype';
 $user = 'root';
 $password = '';
+
+$URL = "web_first_sem_prototype";
