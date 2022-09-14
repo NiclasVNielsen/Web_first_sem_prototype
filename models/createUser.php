@@ -22,6 +22,9 @@
     
         $pdo->query($sql);
         
+        $_SESSION['name'] = $name;
+        $_SESSION['loggedin'] = "true";
+        
         header("Location: /$URL/");
     }else{
         header("Location: /$URL/views/login/signup.php?err=invalidname");

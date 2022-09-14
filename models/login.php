@@ -13,8 +13,7 @@
         $_SESSION["name"] = $data['name'];
         $_SESSION["loggedin"] = "true";
 
-        echo $_SESSION["name"];
-        header("Location:/$URL/index.php");
+        header("Location:/$URL/");
     }else{
         header("Location: /$URL/views/login/login.php?err=wronginfo");
     }
