@@ -36,6 +36,9 @@
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
                 ?>
                     <li>
+                        <a href="/<?php echo $URL ?>/views/login/profile.php">Profile</a>
+                    </li>
+                    <li>
                         <a href="/<?php echo $URL ?>/models/logout.php">Logout</a>
                     </li>
                 <?php

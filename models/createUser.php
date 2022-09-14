@@ -8,4 +8,4 @@
 
     $pdo->query($sql);
     
-    header("Location: /$URL/views/login/signup.php?meep=moop");
+    header("Location: /$URL/views/login/signup.php");
