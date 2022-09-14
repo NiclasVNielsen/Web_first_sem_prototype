@@ -9,7 +9,20 @@
     //if name == current_name dont change it
     //if password == "" dont change it
 
-    if($name != ""){
+    $nameCheckSql = "SELECT name FROM users WHERE name=$name";
+
+    $data = $pdo->query($nameCheckSql)->fetch();
+    //🔥 when changing to a reserved name stuff burns
+
+    $validName = true;
+    if($data[0]){
+        $validName = false;
+    }
+    if($data[0] == $currentName){
+        $validName = true;
+    }
+
+    if($name != "" && $validName){
         if($password != ""){
             $sql = "UPDATE users SET name = $name, password = $password WHERE name = $currentName";
         }else{
