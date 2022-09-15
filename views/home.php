@@ -7,6 +7,8 @@
     require './views/partials/header.php';
 ?>
 
+<a href="/<?php echo $URL ?>/views/createPost.php">Create post</a>
+
 <div>
     <?php 
         $postSql = 'SELECT * FROM posts';

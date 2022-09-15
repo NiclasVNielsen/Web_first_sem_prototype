@@ -11,7 +11,7 @@
 <?php 
     //if logged in redirect to /
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
-        header("Location:/$URL/index.php");
+        header("Location:/$URL/");
     }
 ?>
 
