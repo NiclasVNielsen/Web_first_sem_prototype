@@ -30,7 +30,7 @@
             <label for="image">Picture</label>
             <input type="file" name="image" id="image">
         </div>
-        <input type="submit" value="Post">
+        <input type="submit" value="Post" name="submit">
     </fieldset>
 </form>
 
