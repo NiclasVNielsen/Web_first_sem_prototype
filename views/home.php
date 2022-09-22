@@ -34,6 +34,10 @@
             <img src="./src/uploads/<?php echo $post['image'] ?>" alt="<?php echo $post['title']; ?>">
         </figure>
         <div class="comments">
+            <form method="post" action="/<?php echo $URL; ?>/models/createMainComment.php?post=<?php echo $post['post_id']; ?>">
+                <textarea name="comment" id="comment" cols="80" rows="3"></textarea>
+                <input type="submit" value="submit">
+            </form>
             <?php 
                 $post_id = $post['post_id'];
                 $commentSql = "SELECT * FROM comments WHERE fk_target = '1' AND fk = '$post_id' ORDER BY likes, date DESC";
@@ -54,6 +58,10 @@
                     </p>
                     
                     <div class="subComments">
+                        <form method="post" action="/<?php echo $URL; ?>/models/createSubComment.php?post=<?php echo $comment['comment_id']; ?>">
+                            <textarea name="comment" id="comment" cols="80" rows="3"></textarea>
+                            <input type="submit" value="submit">
+                        </form>
                         <?php 
                             $comment_id = $comment['comment_id'];
                             $subCommentSql = "SELECT * FROM comments WHERE fk_target = '2' AND fk = '$comment_id' ORDER BY date, likes DESC";

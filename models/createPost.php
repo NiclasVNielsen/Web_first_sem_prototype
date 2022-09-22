@@ -34,7 +34,9 @@
                     /* send data to DB */
                     $title = $_POST['title'];
                     $description = $_POST['description'];
-                    $sql = "INSERT INTO posts (title, description, image, likes, date, sticky, user_fk) VALUES ('$title', '$description', '$fileNewName', 0, '2022-09-21-10-32-40'/* current time */, 0, $userId)";
+                    $date = date("Y-m-d H:i:s");
+
+                    $sql = "INSERT INTO posts (title, description, image, likes, date, sticky, user_fk) VALUES ('$title', '$description', '$fileNewName', 0, '$date', 0, $userId)";
                 
                     $pdo->query($sql);
 
