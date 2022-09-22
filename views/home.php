@@ -58,7 +58,7 @@
                     </p>
                     
                     <div class="subComments">
-                        <form method="post" action="/<?php echo $URL; ?>/models/createSubComment.php?post=<?php echo $comment['comment_id']; ?>">
+                        <form method="post" action="/<?php echo $URL; ?>/models/createSubComment.php?comment=<?php echo $comment['comment_id']; ?>">
                             <textarea name="comment" id="comment" cols="80" rows="3"></textarea>
                             <input type="submit" value="submit">
                         </form>
