@@ -5,9 +5,9 @@
     $postId = $_GET['post'];
 
     $name = $_SESSION['name'];
-    $fetchIdSql = "SELECT user_id FROM users WHERE name = '$name'";
+    //$fetchIdSql = "SELECT user_id FROM users WHERE name = '$name'";
 
-    $userId = $pdo->query($fetchIdSql)->fetch()[0];
+    $userId = $_SESSION["user_id"];
 
     $date = date("Y-m-d H:i:s");
 
